@@ -15,7 +15,7 @@ This project builds an automated pipeline that compresses Ubuntu system logs on 
 
 No GUI tools were used at any stage. Every Azure resource was provisioned, configured, and verified through the **Azure CLI** running inside an SSH terminal session from a Windows desktop workstation.
 
-> **Why this matters:** Log management and cloud storage pipelines are core to federal IT and cloud operations roles. This project demonstrates that combination hands-on Linux CLI, Azure resource provisioning, RBAC configuration, bash scripting, and automation in a single working system.
+> **Why this matters:** Log management and cloud storage pipelines are core to federal IT and cloud operations roles. This project demonstrates that combination. Hands-on Linux CLI, Azure resource provisioning, RBAC configuration, bash scripting, and automation in a single working system.
 
 ---
 
