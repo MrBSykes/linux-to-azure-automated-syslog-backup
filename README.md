@@ -123,6 +123,8 @@ az role assignment create \
 
 ### 5. Create the Backup Script
 
+The finished script is also saved in this repo as [`scripts/backup.sh`](scripts/backup.sh).
+
 ```bash
 nano ~/backup.sh
 ```
@@ -239,7 +241,21 @@ This project provides hands-on coverage of core AZ-900 exam domains:
 
 ## Documentation
 
-Full project documentation (PDF) is available in this repository covering Azure CLI setup, resource provisioning walkthrough, RBAC configuration, bash script, cron automation, troubleshooting log with root cause analysis, and AZ-900 exam alignment mapping.
+Full project documentation ([PDF](docs/linux-to-azure-log-backup-documentation.pdf)) covers Azure CLI setup, resource provisioning walkthrough, RBAC configuration, bash script, cron automation, troubleshooting log with root cause analysis, and AZ-900 exam alignment mapping.
+
+---
+
+## Repository Layout
+
+```
+.
+├── README.md
+├── scripts/
+│   └── backup.sh
+├── docs/
+│   └── linux-to-azure-log-backup-documentation.pdf
+└── screenshots/
+```
 
 ---
 
