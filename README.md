@@ -24,7 +24,7 @@ No GUI tools were used at any stage. Every Azure resource was provisioned, confi
 ```
 sykes-ubuntu (ASUS X550ZA)
      │
-     │  SSH from SYKES-DESKTOP (192.168.1.162)
+     │  SSH from SYKES-DESKTOP
      │
      ├── /var/log/syslog
      │        │
@@ -43,13 +43,7 @@ sykes-ubuntu (ASUS X550ZA)
 ## Azure Resources
 
 | Resource | Name | Configuration |
-|---|---|---|
-| **Resource Group** | LinuxLogsRG | East US |
-| **Storage Account** | sykeslogstorage | Standard LRS, StorageV2, HTTPS-only, SSE enabled |
-| **Blob Container** | syslogs | Private access |
-| **RBAC Role** | Storage Blob Data Contributor | Assigned at storage account scope via Object ID |
-
----
+|---
 
 ## Source Machine
 
@@ -168,7 +162,7 @@ crontab -e
 Add this line (no `#`):
 
 ```
-0 0 * * * /home/mrbryansykes/backup.sh >> /home/mrbryansykes/backup.log 2>&1
+0 0 * * * /home/<user>/backup.sh >> /home/<user>/backup.log 2>&1
 ```
 
 Verify:
@@ -183,13 +177,17 @@ crontab -l
 
 | # | Screenshot | Description |
 |---|---|---|
-| 07 | ![](screenshots/07_Azure_CLI_Login_Success.png) | Azure CLI login — subscription confirmed |
+| 07 | ![](screenshots/07_Azure_CLI_Login_Success.png) | Azure CLI login succeeded, subscription listed |
+| 08 | ![](screenshots/08_Azure_CLI_No_Subscriptions_Yahoo_Account.png) | Login blocked by security defaults (AADSTS530035), no subscriptions found |
 | 09 | ![](screenshots/09_Azure_CLI_Subscription_Confirmed.png) | Azure subscription 1 active |
 | 11 | ![](screenshots/11_Azure_Resource_Group_Created.png) | LinuxLogsRG created |
 | 12 | ![](screenshots/12_Azure_Storage_Account_Created.png) | sykeslogstorage created |
-| 13 | ![](screenshots/13_Backup_Script_Permissions_Error.png) | RBAC error — before role assignment |
+| 13 | ![](screenshots/13_Backup_Script_Permissions_Error.png) | RBAC error before role assignment |
 | 14 | ![](screenshots/14_Azure_Role_Assignment_Blob_Contributor.png) | Storage Blob Data Contributor assigned |
-| 15 | ![](screenshots/15_Backup_Script_Upload_Success.png) | Successful upload — 100% confirmed |
+| 15 | ![](screenshots/15_Backup_Script_Upload_Success.png) | Successful upload, 100% confirmed |
+| 20 | ![](screenshots/20_TLS_Update_CLI_Output.png) | Minimum TLS version updated to 1.2 from the CLI |
+| 22 | ![](screenshots/22_Azure_Blob_Storage_Browser.png) | Blob storage browser showing the syslogs container |
+| 23 | ![](screenshots/23_Blobstorage_Log_Inside_Container.png) | Compressed syslog backup inside the container |
 
 ---
 
